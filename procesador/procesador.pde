@@ -5,7 +5,7 @@ boolean key = false;
 boolean test=false;
 boolean up=false;
 String op = "";
-int opr=70;
+int opr=0;
 int bin;
 int move1=160;
 int c2=12, c=12;
@@ -33,7 +33,7 @@ int x=440, y=380, x1=586, y1=340, x2=276, y2=-194, f2=255, x3=240, y3=142, f3=25
   x85=586, y85=340, x86=276, y86=-194, f86=255, x87=40, y87=22, f87=255, 
   x88=440, y88=380, f88=255, x89=586, y89=340, x90=276, y90=-194, f90=255, x91=240, y91=142, f91=255, x92=242, y92=96, f92=255, 
   x93=586, y93=340, x94=76, y94=88, f94=255, x95=40, y95=22, f95=255, 
-  x96=440, y96=380, f96=255, x97=586, y97=340, x98=276, y98=-194, f98=255, x99=240, y99=142, f99=255, x100=242, y100=96, f100=255,
+  x96=440, y96=380, f96=255, x97=586, y97=340, x98=276, y98=-194, f98=255, x99=240, y99=142, f99=255, x100=242, y100=96, f100=255, x101=586, y101=340, 
   t1=397, t2=8, t3=385, t4=1, t5=385, t6=16, moveT=0, a1=255, a2=255, a3=255, a4=255, a5=255, a6=255, a7=255, a8=255, a9=255, a10=255, a11=255, a12=255, g1=44, g2=200, g3=44, g4=200, g5=44, g6=200, m1=255, m2=255, m3=255;
 
 void setup() {
@@ -343,7 +343,7 @@ void draw() {
     fill(f100);
     //direccion
     text("00000000", (width/2)-x100-2, (height/2)+y100);
-    
+
     switch(opr) {
       //contador-direcciones  
     case 0:
@@ -1809,6 +1809,7 @@ void draw() {
 
         if (y94==-144) {
           opr=85;
+          up=false;
         } else {
           y94-=4;
         }
@@ -1838,6 +1839,97 @@ void draw() {
         }
       } else {
         x95-=4;
+      }
+      break;
+      //t12 Finalizar
+      //contador-direcciones  
+    case 87:
+      f96=0;
+      if (!test) {
+        if (y96==56) {
+          if (x96==584) {
+            test=true;
+          } else {
+            x96+=4;
+          }
+        } else {
+          y96-=4;
+        }
+      } else {
+        if (y96==-134) {
+          opr=88;
+        } else {
+          y96-=2;
+        }
+      }
+      break;
+      //direcciones-memoria
+    case 88:
+      fill(0);
+      text("00001100", (width/2)-x97, (height/2)+y97);
+      if (y97==376) {
+        if (x97==-322) {
+          moveT=144;
+          opr=89;
+          break;
+        } else {
+          x97-=4;
+        }
+      } else {
+        y97+=4;
+      }
+      break;
+      //Memoria-Registro de datos
+    case 89:
+      f98=0;
+      if (x98==-176) {
+        if (y98==-154) {
+          opr=90;
+          break;
+        } else {
+          y98+=4;
+        }
+      } else {
+        x98-=4;
+      }
+      break;
+      //registro datos - direcciones e intrucciones
+    case 90:
+      f99=0;
+      f100=0;
+      if (x99==324) {
+        if (y99==42) {
+        } else {
+          y99-=4;
+        }
+      } else {
+        x99+=4;
+      }
+      if (x100==582) {
+        if (y100==144) {
+          opr=91;
+          break;
+        } else {
+          y100+=4;
+        }
+      } else {
+        x100+=4;
+      }
+      break;
+      //direcciones-memoria
+    case 91:
+      fill(0);
+      text("00000000", (width/2)-x101, (height/2)+y101);
+      if (y101==376) {
+        if (x101==-322) {
+          moveT=0;
+          opr=92;
+          break;
+        } else {
+          x101-=4;
+        }
+      } else {
+        y101+=4;
       }
       break;
     }
