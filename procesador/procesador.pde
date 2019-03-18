@@ -31,7 +31,9 @@ int x=440, y=380, x1=586, y1=340, x2=276, y2=-194, f2=255, x3=240, y3=142, f3=25
   x77=586, y77=340, x78=276, y78=-194, f78=255, x79=40, y79=22, f79=255, 
   x80=440, y80=380, f80=255, x81=586, y81=340, x82=276, y82=-194, f82=255, x83=240, y83=142, f83=255, x84=242, y84=96, f84=255, 
   x85=586, y85=340, x86=276, y86=-194, f86=255, x87=40, y87=22, f87=255, 
-  t1=397, t2=8, t3=385, t4=1, t5=385, t6=16, moveT=0, a1=255, a2=255, a3=255, a4=255, a5=255, a6=255, a7=255, a8=255, a9=255, a10=255, a11=0, g1=44, g2=200, g3=44, g4=200, m1=255, m2=255;
+  x88=440, y88=380, f88=255, x89=586, y89=340, x90=276, y90=-194, f90=255, x91=240, y91=142, f91=255, x92=242, y92=96, f92=255, 
+  x93=586, y93=340, x94=276, y94=-194, f94=255, x95=40, y95=22, f95=255, 
+  t1=397, t2=8, t3=385, t4=1, t5=385, t6=16, moveT=0, a1=255, a2=255, a3=255, a4=255, a5=255, a6=255, a7=255, a8=255, a9=255, a10=255, a11=255,a12=0, g1=44, g2=200, g3=44, g4=200,g5=44,g6=200, m1=255, m2=255,m3=0;
 
 void setup() {
   noLoop();
@@ -302,6 +304,31 @@ void draw() {
     //Acumulador
     fill(a11);
     text("0000000100011110", (width/2)+77, (height/2)-343+148);
+    //T11 Guardar
+    //contador
+    fill(f88);
+    text("00000111", (width/2)-x88, (height/2)-y88);
+    //memoria
+    fill(f90);
+    text("0000011000010111", (width/2)+x90, (height/2)-y90);
+    //instruccion
+    fill(f91);
+    text("00000110", (width/2)-x91, (height/2)-y91);
+    fill(f92);
+    //direccion
+    text("00010111", (width/2)-x92-2, (height/2)+y93);
+    //memoria
+    fill(f94);
+    text("0000000100011110", (width/2)+x94, (height/2)-y94);
+    //registro ALU
+    fill(f95);
+    text("0000000100011110", (width/2)-x95, (height/2)-y95);
+    //Acumulador
+    fill(a12);
+    text("0000000100011110", (width/2)+77, (height/2)-343+160);
+    //GMemoria
+    fill(m3);
+    text("0000000100011110", (width/2)+489, (height/2)+288);
 
     switch(opr) {
       //contador-direcciones  
@@ -1555,8 +1582,8 @@ void draw() {
           y80-=4;
         }
       } else {
-        if (y80==-62) {
-          opr=74;
+        if (y80==-86) {
+          opr=73;
         } else {
           y80-=2;
         }
@@ -1565,99 +1592,238 @@ void draw() {
       //direcciones-memoria
     case 73:
       fill(0);
-      text("00001001", (width/2)-x73, (height/2)+y73);
-      if (y73==376) {
-        if (x73==-322) {
-          moveT=108;
-          opr=67;
+      text("00001001", (width/2)-x81, (height/2)+y81);
+      if (y81==376) {
+        if (x81==-322) {
+          moveT=120;
+          opr=74;
           break;
         } else {
-          x73-=4;
+          x81-=4;
         }
       } else {
-        y73+=4;
+        y81+=4;
       }
       break;
       //Memoria-Registro de datos
     case 74:
-      f74=0;
-      if (x74==-176) {
-        if (y74==-82) {
-          opr=68;
+      f82=0;
+      if (x82==-176) {
+        if (y82==-106) {
+          opr=75;
           break;
         } else {
-          y74+=4;
+          y82+=4;
         }
       } else {
-        x74-=4;
+        x82-=4;
       }
       break;
       //registro datos - direcciones e intrucciones
     case 75:
-      f75=0;
-      f76=0;
-      if (x75==324) {
-        if (y75==78) {
+      f83=0;
+      f84=0;
+      if (x83==324) {
+        if (y83==66) {
         } else {
-          y75-=4;
+          y83-=4;
         }
       } else {
-        x75+=4;
+        x83+=4;
       }
-      if (x76==582) {
-        if (y76==72) {
-          opr=69;
+      if (x84==582) {
+        if (y84==96) {
+          opr=76;
           break;
         } else {
-          y76-=4;
+          y84-=4;
         }
       } else {
-        x76+=4;
+        x84+=4;
       }
       break;
       //direcciones-memoria
     case 76:
       fill(0);
-      text("00010110", (width/2)-x77, (height/2)+y77);
-      if (y77==376) {
-        if (x77==-322) {
-          moveT=264;
-          opr=70;
+      text("00010110", (width/2)-x85, (height/2)+y85);
+      if (y85==376) {
+        if (x85==-322) {
+          moveT=276;
+          opr=77;
           break;
         } else {
-          x77-=4;
+          x85-=4;
         }
       } else {
-        y77+=4;
+        y85+=4;
       }
       break;
       //memoria - registro datos
     case 77:
-      f78=0;
-      if (x78==-176) {
-        if (y78==-94) {
-          opr=71;
+      f86=0;
+      if (x86==-176) {
+        if (y86==-118) {
+          opr=78;
           break;
         } else {
-          y78+=4;
+          y86+=4;
         }
       } else {
-        x78-=4;
+        x86-=4;
       }
       break;
       //registro datos - registro entrada
     case 78:
-      f79=0;
-      if (x79==-308) {
-        if (y79==226) {
-          a10=0;
+      f87=0;
+      if (x87==-308) {
+        if (y87==214) {
+          a11=0;
           test=false;
-          opr=72;
+          opr=79;
         } else {
-          y79+=4;
+          y87+=4;
         }
       } else {
-        x79-=4;
+        x87-=4;
+      }
+      break;
+      //t11 GUARDAR
+      //contador-direcciones  
+    case 79:
+      f88=0;
+      if (!test) {
+        if (y88==56) {
+          if (x88==584) {
+            test=true;
+          } else {
+            x88+=4;
+          }
+        } else {
+          y88-=4;
+        }
+      } else {
+        if (y88==-12) {
+          opr=81;
+        } else {
+          y88-=2;
+        }
+      }
+      break;
+      //direcciones-memoria
+    case 80:
+      fill(0);
+      text("00000111", (width/2)-x89, (height/2)+y89);
+      if (y89==376) {
+        if (x89==-322) {
+          moveT=96;
+          opr=81;
+          break;
+        } else {
+          x89-=4;
+        }
+      } else {
+        y89+=4;
+      }
+      break;
+      //memoria-Registro de datos
+    case 81:
+      f90=0;
+      if (x90==-176) {
+        if (y90==-34) {
+          opr=82;
+          break;
+        } else {
+          y90+=4;
+        }
+      } else {
+        x90-=4;
+      }
+      break;
+      //registro datos - direcciones e intrucciones
+    case 82:
+      f91=0;
+      f92=0;
+      if (x91==324) {
+        if (y91==102) {
+        } else {
+          y91-=4;
+        }
+      } else {
+        x91+=4;
+      }
+      if (x92==582) {
+        if (y92==24) {
+          opr=83;
+          break;
+        } else {
+          y92-=4;
+        }
+      } else {
+        x92+=4;
+      }
+      break;
+      //direcciones-memoria
+    case 83:
+      fill(0);
+      text("00010111", (width/2)-x93, (height/2)+y93);
+      if (y93==376) {
+        if (x93==-322) {
+          moveT=288;
+          opr=84;
+          break;
+        } else {
+          x93-=4;
+        }
+      } else {
+        y93+=4;
+      }
+      break;
+      //acumulador - registro datos
+    case 84:
+      f94=0;
+      if (!up) {
+        if (y94==8) {
+          if (x94==-176) {
+            up=true;
+          } else {
+            x94-=4;
+          }
+        } else {
+          y94-=4;
+        }
+      } else {
+
+        if (y94==-48) {
+          opr=85;
+        } else {
+          y94-=4;
+        }
+      }
+      break;
+      //registro datos-memoria
+    case 85:
+      fill(0);
+      text("0000000100011110", (width/2)-g5, (height/2)+g6);
+      if (g5==-276) {
+        m3=0;
+        opr=86;
+      } else {
+        g5-=4;
+      }
+      break;
+      //registro datos - registro entrada
+    case 86:
+      f95=0;
+      if (x95==-308) {
+        if (y95==250) {
+          a11=0;
+          test=false;
+          opr=87;
+        } else {
+          y95+=4;
+        }
+      } else {
+        x95-=4;
       }
       break;
     }
