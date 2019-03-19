@@ -9,7 +9,7 @@ boolean keyPs = false;
 boolean test=false;
 boolean up=false;
 String op = "";
-int opr=15;
+int opr=42;
 int bin;
 int move1=160;
 int c2=12, c=12;
@@ -20,7 +20,7 @@ int x=440, y=380, x1=586, y1=340, x2=276, y2=-194, f2=255, x3=240, y3=142, f3=25
   x16=440, y16=380, f16=255, x17=586, y17=340, x18=276, y18=-194, f18=255, x19=240, y19=142, f19=255, x20=242, y20=96, f20=255, 
   x21=586, y21=340, x22=276, y22=-194, f22=255, x23=40, y23=22, f23=255, 
   x24=440, y24=380, f24=255, x25=586, y25=340, x26=276, y26=-194, f26=255, x27=240, y27=142, f27=255, x28=242, y28=96, f28=255, 
-  x29=586, y29=340, x30=76, y30=88, f30=0, x31=40, y31=22, f31=255, 
+  x29=586, y29=340, x30=76, y30=88, f30=255, x31=40, y31=22, f31=255, 
   x32=440, y32=380, f32=255, x33=586, y33=340, x34=276, y34=-194, f34=255, x35=240, y35=142, f35=255, x36=242, y36=96, f36=255, 
   x37=586, y37=340, x38=276, y38=-194, f38=255, x39=40, y39=22, f39=255, 
   x40=440, y40=380, f40=255, x41=586, y41=340, x42=276, y42=-194, f42=255, x43=240, y43=142, f43=255, x44=242, y44=96, f44=255, 
@@ -2258,8 +2258,8 @@ void draw() {
     //direccion
     text("00010100", (width/2)-x44-2, (height/2)+y44);
     //memoria
-    fill(f46);
-    text("0000000000110010", (width/2)+x46, (height/2)-y46);
+    fill(f62);
+    text("0000000000110010", (width/2)+x62, (height/2)-y62);
     //registro ALU
     fill(f47);
     text("0000000000110010", (width/2)-x47, (height/2)-y47);
@@ -2268,7 +2268,7 @@ void draw() {
     text("0000000000110010", (width/2)+77, (height/2)-343+84);
     //GMemoria
     fill(m2);
-    text("0000000000011000", (width/2)+489, (height/2)+264);
+    text("0000000000110010", (width/2)+489, (height/2)+240);
     //T6 Reset
     //contador
     fill(f48);
@@ -2305,8 +2305,8 @@ void draw() {
     //direccion
     text("00010011", (width/2)-x60-2, (height/2)+y60);
     //memoria
-    fill(f62);
-    text("0000000000011000", (width/2)+x62, (height/2)-y62);
+    fill(f46);
+    text("0000000000011000", (width/2)+x46, (height/2)-y46);
     //registro ALU
     fill(f63);
     text("0000000000011000", (width/2)-x63, (height/2)-y63);
@@ -2703,7 +2703,7 @@ void draw() {
         y21+=4;
       }
       break;
-        //acumulador - registro datos
+      //acumulador - registro datos
     case 19:
       f30=0;
       if (!up) {
@@ -2841,9 +2841,9 @@ void draw() {
       } else {
         y29+=4;
       }
-      
+
       break;
-       //Memoria-Registro de datos
+      //Memoria-Registro de datos
     case 27:
       f22=0;
       if (x22==-176) {
@@ -2950,7 +2950,7 @@ void draw() {
       //direcciones-memoria
     case 33:
       fill(0);
-      text("00010011", (width/2)-x37, (height/2)+y37);
+      text("00010010", (width/2)-x37, (height/2)+y37);
       if (y37==376) {
         if (x37==-322) {
           moveT=228;
@@ -2992,36 +2992,36 @@ void draw() {
         x39-=4;
       }
       break;
-      //t5
+      //t5 Guardar
       //contador-direcciones  
-    //case 35:
-    //  f40=0;
-    //  if (!test) {
-    //    if (y40==56) {
-    //      if (x40==584) {
-    //        test=true;
-    //      } else {
-    //        x40+=4;
-    //      }
-    //    } else {
-    //      y40-=4;
-    //    }
-    //  } else {
-    //    if (y40==36) {
-    //      opr=36;
-    //    } else {
-    //      y40-=2;
-    //    }
-    //  }
-    //  break;
-    //  //direcciones-memoria
     case 36:
+      f40=0;
+      if (!test) {
+        if (y40==56) {
+          if (x40==584) {
+            test=true;
+          } else {
+            x40+=4;
+          }
+        } else {
+          y40-=4;
+        }
+      } else {
+        if (y40==36) {
+          opr=37;
+        } else {
+          y40-=2;
+        }
+      }
+      break;
+      //direcciones-memoria
+    case 37:
       fill(0);
       text("00000101", (width/2)-x41, (height/2)+y41);
       if (y41==376) {
         if (x41==-322) {
           moveT=60;
-          opr=37;
+          opr=38;
           break;
         } else {
           x41-=4;
@@ -3031,11 +3031,11 @@ void draw() {
       }
       break;
       //Memoria-Registro de datos
-    case 37:
+    case 38:
       f42=0;
       if (x42==-176) {
         if (y42==14) {
-          opr=38;
+          opr=39;
           break;
         } else {
           y42+=4;
@@ -3045,7 +3045,7 @@ void draw() {
       }
       break;
       //registro datos - direcciones e intrucciones
-    case 38:
+    case 39:
       f43=0;
       f44=0;
       if (x43==324) {
@@ -3058,7 +3058,7 @@ void draw() {
       }
       if (x44==582) {
         if (y44==-24) {
-          opr=39;
+          opr=40;
           break;
         } else {
           y44-=4;
@@ -3068,13 +3068,13 @@ void draw() {
       }
       break;
       //direcciones-memoria
-    case 39:
+    case 40:
       fill(0);
       text("00010100", (width/2)-x45, (height/2)+y45);
       if (y45==376) {
         if (x45==-322) {
           moveT=240;
-          opr=40;
+          opr=41;
           break;
         } else {
           x45-=4;
@@ -3083,28 +3083,48 @@ void draw() {
         y45+=4;
       }
       break;
-      //memoria - registro datos
-    case 40:
-      f46=0;
-      if (x46==-176) {
-        if (y46==2) {
-          opr=41;
-          break;
+      //acumulador - registro datos
+    case 41:
+      f62=0;
+      if (!up) {
+        if (y62==8) {
+          if (x62==-176) {
+            up=true;
+          } else {
+            x62-=4;
+          }
         } else {
-          y46+=4;
+          y62-=4;
         }
       } else {
-        x46-=4;
+
+        if (y62==0) {
+          opr=42;
+        } else {
+          y62-=4;
+        }
       }
       break;
+      //registro datos-memoria
+    case 42:
+      fill(0);
+      text("0000000000110010", (width/2)-g3, (height/2)+g4);
+      if (g3==-276) {
+        m2=0;
+        opr=43;
+      } else {
+        g3-=4;
+      }
+      break;
+
       //registro datos - registro entrada
-    case 41:
+    case 43:
       f47=0;
       if (x47==-308) {
         if (y47==274) {
           a6=0;
           test=false;
-          opr=42;
+          opr=44;
         } else {
           y47+=4;
         }
@@ -3114,7 +3134,7 @@ void draw() {
       break;
       //t6
       //contador-direcciones  
-    case 42:
+    case 44:
       f48=0;
       if (!test) {
         if (y48==56) {
@@ -3128,20 +3148,20 @@ void draw() {
         }
       } else {
         if (y48==12) {
-          opr=43;
+          opr=45;
         } else {
           y48-=2;
         }
       }
       break;
       //direcciones-memoria
-    case 43:
+    case 45:
       fill(0);
       text("00000110", (width/2)-x49, (height/2)+y49);
       if (y49==376) {
         if (x49==-322) {
           moveT=72;
-          opr=44;
+          opr=46;
           break;
         } else {
           x49-=4;
@@ -3151,11 +3171,11 @@ void draw() {
       }
       break;
       //Memoria-Registro de datos
-    case 44:
+    case 46:
       f50=0;
       if (x50==-176) {
         if (y50==-10) {
-          opr=45;
+          opr=47;
           break;
         } else {
           y50+=4;
@@ -3165,7 +3185,7 @@ void draw() {
       }
       break;
       //registro datos - direcciones e intrucciones
-    case 45:
+    case 47:
       f51=0;
       f52=0;
       if (x51==324) {
@@ -3178,7 +3198,7 @@ void draw() {
       }
       if (x52==582) {
         if (y52==0) {
-          opr=46;
+          opr=48;
           break;
         } else {
           y52-=4;
@@ -3188,13 +3208,13 @@ void draw() {
       }
       break;
       //direcciones-memoria
-    case 46:
+    case 48:
       fill(0);
-      text("00010101", (width/2)-x53, (height/2)+y53);
+      text("00011111", (width/2)-x53, (height/2)+y53);
       if (y53==376) {
         if (x53==-322) {
-          moveT=252;
-          opr=47;
+          moveT=372;
+          opr=49;
           break;
         } else {
           x53-=4;
@@ -3204,11 +3224,11 @@ void draw() {
       }
       break;
       //memoria - registro datos
-    case 48:
+    case 49:
       f54=0;
       if (x54==-176) {
         if (y54==-22) {
-          opr=49;
+          opr=50;
           break;
         } else {
           y54+=4;
@@ -3218,13 +3238,13 @@ void draw() {
       }
       break;
       //registro datos - registro entrada
-    case 49:
+    case 50:
       f55=0;
       if (x55==-308) {
         if (y55==262) {
           a7=0;
           test=false;
-          opr=50;
+          opr=51;
         } else {
           y55+=4;
         }
@@ -3232,9 +3252,9 @@ void draw() {
         x55-=4;
       }
       break;
-      //t7 GUARDAR
+      //t7 
       //contador-direcciones  
-    case 50:
+    case 51:
       f56=0;
       if (!test) {
         if (y56==56) {
@@ -3255,13 +3275,13 @@ void draw() {
       }
       break;
       //direcciones-memoria
-    case 51:
+    case 52:
       fill(0);
       text("00000111", (width/2)-x57, (height/2)+y57);
       if (y57==376) {
         if (x57==-322) {
           moveT=84;
-          opr=52;
+          opr=53;
           break;
         } else {
           x57-=4;
@@ -3271,11 +3291,11 @@ void draw() {
       }
       break;
       //memoria-Registro de datos
-    case 52:
+    case 53:
       f58=0;
       if (x58==-176) {
         if (y58==-34) {
-          opr=53;
+          opr=54;
           break;
         } else {
           y58+=4;
@@ -3285,7 +3305,7 @@ void draw() {
       }
       break;
       //registro datos - direcciones e intrucciones
-    case 53:
+    case 54:
       f59=0;
       f60=0;
       if (x59==324) {
@@ -3298,7 +3318,7 @@ void draw() {
       }
       if (x60==582) {
         if (y60==24) {
-          opr=54;
+          opr=55;
           break;
         } else {
           y60-=4;
@@ -3308,13 +3328,13 @@ void draw() {
       }
       break;
       //direcciones-memoria
-    case 54:
+    case 55:
       fill(0);
       text("00010111", (width/2)-x61, (height/2)+y61);
       if (y61==376) {
         if (x61==-322) {
           moveT=276;
-          opr=55;
+          opr=56;
           break;
         } else {
           x61-=4;
@@ -3323,37 +3343,18 @@ void draw() {
         y61+=4;
       }
       break;
-      //acumulador - registro datos
-    case 55:
-      f62=0;
-      if (!up) {
-        if (y62==8) {
-          if (x62==-176) {
-            up=true;
-          } else {
-            x62-=4;
-          }
-        } else {
-          y62-=4;
-        }
-      } else {
-
-        if (y62==-48) {
-          opr=56;
-        } else {
-          y62-=4;
-        }
-      }
-      break;
-      //registro datos-memoria
+      //memoria - registro datos
     case 56:
-      fill(0);
-      text("0000000100011110", (width/2)-g3, (height/2)+g4);
-      if (g3==-276) {
-        m2=0;
-        opr=57;
+      f46=0;
+      if (x46==-176) {
+        if (y46==2) {
+          opr=57;
+          break;
+        } else {
+          y46+=4;
+        }
       } else {
-        g3-=4;
+        x46-=4;
       }
       break;
       //registro datos - registro entrada
