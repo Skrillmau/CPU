@@ -3824,7 +3824,7 @@ void draw() {
         text("", d+move1, b2+=c2);
       }
     }
-    //T0
+    //T0 Sumar 11
     //contador
     text("00000000", (width/2)-x, (height/2)-y);
     //memoria
@@ -3838,14 +3838,14 @@ void draw() {
     text("00010000", (width/2)-x4-2, (height/2)+y4);
     fill(f6);
     //memoria
-    text("0000000000001000", (width/2)+x6, (height/2)-y6);
+    text("0000000000001011", (width/2)+x6, (height/2)-y6);
     //registro ALU
     fill(f7);
-    text("0000000000001000", (width/2)-x7, (height/2)-y7);
+    text("0000000000001011", (width/2)-x7, (height/2)-y7);
     //Acumulador
     fill(a1);
-    text("0000000000001000", (width/2)+77, (height/2)-343+24);
-    //T1
+    text("0000000000001011", (width/2)+77, (height/2)-343+24);
+    //T1 Elevar al cuadrado
     //contador
     fill(f8);
     text("00000001", (width/2)-x8, (height/2)-y8);
@@ -3860,14 +3860,14 @@ void draw() {
     text("00010001", (width/2)-x12-2, (height/2)+y12);
     //memoria
     fill(f14);
-    text("0000000000000011", (width/2)+x14, (height/2)-y14);
+    text("0000000000000010", (width/2)+x14, (height/2)-y14);
     //registro ALU
     fill(f15);
-    text("0000000000000011", (width/2)-x15, (height/2)-y15);
+    text("0000000000000010", (width/2)-x15, (height/2)-y15);
     //Acumulador
     fill(a2);
-    text("0000001000000000", (width/2)+77, (height/2)-343+36);
-    //T2
+    text("0000000001111001", (width/2)+77, (height/2)-343+36);
+    //T2 Sumar 135
     //contador
     fill(f16);
     text("00000010", (width/2)-x16, (height/2)-y16);
@@ -3882,233 +3882,95 @@ void draw() {
     text("00010010", (width/2)-x20-2, (height/2)+y20);
     //memoria
     fill(f22);
-    text("0000000000011000", (width/2)+x22, (height/2)-y22);
+    text("0000000010000111", (width/2)+x22, (height/2)-y22);
     //registro ALU
     fill(f23);
-    text("0000000000011000", (width/2)-x23, (height/2)-y23);
+    text("0000000010000111", (width/2)-x23, (height/2)-y23);
     //Acumulador
     fill(a3);
-    text("0000001000011000", (width/2)+77, (height/2)-343+48);
-    //T3 Guardar
+    text("0000000100000000", (width/2)+77, (height/2)-343+48);
+    //T3 Dividir entre 3
     //contador
     fill(f24);
     text("00000011", (width/2)-x24, (height/2)-y24);
     //memoria
     fill(f26);
-    text("0000011000010110", (width/2)+x26, (height/2)-y26);
+    text("0000100100010011", (width/2)+x26, (height/2)-y26);
     //instruccion
     fill(f27);
-    text("00000110", (width/2)-x27, (height/2)-y27);
+    text("00001001", (width/2)-x27, (height/2)-y27);
     fill(f28);
     //direccion
-    text("00010110", (width/2)-x28-2, (height/2)+y28);
+    text("00010011", (width/2)-x28-2, (height/2)+y28);
     //memoria
     fill(f30);
-    text("0000001000011000", (width/2)+x30, (height/2)-y30);
+    text("0000000000000011", (width/2)+x30, (height/2)-y30);
     //registro ALU
     fill(f31);
-    text("0000001000011000", (width/2)-x31, (height/2)-y31);
+    text("0000000000000011", (width/2)-x31, (height/2)-y31);
     //Acumulador
     fill(a4);
-    text("0000001000011000", (width/2)+77, (height/2)-343+60);
-    //GMemoria
-    fill(m1);
-    text("0000001000011000", (width/2)+489, (height/2)+264);
-    //T4
+    text("0000000001010101", (width/2)+77, (height/2)-343+60);
+    //T4 Sumar 21
     //contador
     fill(f32);
     text("00000100", (width/2)-x32, (height/2)-y32);
     //memoria
     fill(f34);
-    text("0000001000010011", (width/2)+x34, (height/2)-y34+1);
+    text("0000000000010100", (width/2)+x34, (height/2)-y34+1);
     //instruccion
     fill(f35);
-    text("00000010", (width/2)-x35, (height/2)-y35+2);
+    text("00000000", (width/2)-x35, (height/2)-y35+2);
     fill(f36);
     //direccion
-    text("00010011", (width/2)-x36-2, (height/2)+y36);
+    text("00010100", (width/2)-x36-2, (height/2)+y36);
     //memoria
     fill(f38);
-    text("0000000000000000", (width/2)+x38, (height/2)-y38);
+    text("0000000000010101", (width/2)+x38, (height/2)-y38);
     //registro ALU
     fill(f39);
-    text("0000000000000000", (width/2)-x39, (height/2)-y39);
+    text("0000000000010101", (width/2)-x39, (height/2)-y39);
     //Acumulador
     fill(a5);
-    text("0000000000000000", (width/2)+77, (height/2)-343+72);
-    //T5
+    text("0000000001101010", (width/2)+77, (height/2)-343+72);
+    //T5 Guardar
     //contador
     fill(f40);
     text("00000101", (width/2)-x40, (height/2)-y40);
     //memoria
     fill(f42);
-    text("0000000000010100", (width/2)+x42, (height/2)-y42+1);
+    text("0000011000010101", (width/2)+x42, (height/2)-y42+1);
     //instruccion
     fill(f43);
-    text("00000000", (width/2)-x43, (height/2)-y43+2);
+    text("00000110", (width/2)-x43, (height/2)-y43+2);
     fill(f44);
     //direccion
-    text("00010100", (width/2)-x44-2, (height/2)+y44);
+    text("00010101", (width/2)-x44-2, (height/2)+y44);
     //memoria
     fill(f46);
-    text("0000000011111010", (width/2)+x46, (height/2)-y46);
+    text("0000000001101010", (width/2)+x46, (height/2)-y46);
     //registro ALU
     fill(f47);
-    text("0000000011111010", (width/2)-x47, (height/2)-y47);
+    text("0000000001101010", (width/2)-x47, (height/2)-y47);
     //Acumulador
     fill(a6);
-    text("0000000011111010", (width/2)+77, (height/2)-343+84);
-    //T6
+    text("0000000001101010", (width/2)+77, (height/2)-343+84);
+    //GMemoria
+    fill(m1);
+    text("0000000001101010", (width/2)+489, (height/2)+276);
+    //T6 Finalizar
     //contador
     fill(f48);
     text("00000110", (width/2)-x48, (height/2)-y48);
     //memoria
     fill(f50);
-    text("0000000000010101", (width/2)+x50, (height/2)-y50+1);
+    text("0000011100000000", (width/2)+x50, (height/2)-y50+1);
     //instruccion
     fill(f51);
-    text("00000000", (width/2)-x51, (height/2)-y51+2);
+    text("00000111", (width/2)-x51, (height/2)-y51+2);
     fill(f52);
     //direccion
-    text("00010101", (width/2)-x52-2, (height/2)+y52);
-    //memoria
-    fill(f54);
-    text("0000000000100100", (width/2)+x54, (height/2)-y54);
-    //registro ALU
-    fill(f55);
-    text("0000000000100100", (width/2)-x55, (height/2)-y55);
-    //Acumulador
-    fill(a7);
-    text("0000000100011110", (width/2)+77, (height/2)-343+96);
-    //T7 Guardar
-    //contador
-    fill(f56);
-    text("00000111", (width/2)-x56, (height/2)-y56);
-    //memoria
-    fill(f58);
-    text("0000011000010111", (width/2)+x58, (height/2)-y58);
-    //instruccion
-    fill(f59);
-    text("00000110", (width/2)-x59, (height/2)-y59);
-    fill(f60);
-    //direccion
-    text("00010111", (width/2)-x60-2, (height/2)+y60);
-    //memoria
-    fill(f62);
-    text("0000000100011110", (width/2)+x62, (height/2)-y62);
-    //registro ALU
-    fill(f63);
-    text("0000000100011110", (width/2)-x63, (height/2)-y63);
-    //Acumulador
-    fill(a8);
-    text("0000000100011110", (width/2)+77, (height/2)-343+108);
-    //GMemoria
-    fill(m2);
-    text("0000000100011110", (width/2)+489, (height/2)+276);
-    //T8 reset
-    //contador
-    fill(f64);
-    text("00001000", (width/2)-x64, (height/2)-y64);
-    //memoria
-    fill(f66);
-    text("0000001000010011", (width/2)+x66, (height/2)-y66+1);
-    //instruccion
-    fill(f67);
-    text("00000010", (width/2)-x67, (height/2)-y67+2);
-    fill(f68);
-    //direccion
-    text("00010011", (width/2)-x68-2, (height/2)+y68);
-    //memoria
-    fill(f70);
-    text("0000000000000000", (width/2)+x70, (height/2)-y70);
-    //registro ALU
-    fill(f71);
-    text("0000000000000000", (width/2)-x71, (height/2)-y71);
-    //Acumulador
-    fill(a9);
-    text("0000000000000000", (width/2)+77, (height/2)-343+120);
-    //T9
-    //contador
-    fill(f72);
-    text("00001001", (width/2)-x72, (height/2)-y72);
-    //memoria
-    fill(f74);
-    text("0000000000010110", (width/2)+x74, (height/2)-y74+1);
-    //instruccion
-    fill(f75);
-    text("00000000", (width/2)-x75, (height/2)-y75+2);
-    fill(f76);
-    //direccion
-    text("00010110", (width/2)-x76-2, (height/2)+y76);
-    //memoria
-    fill(f78);
-    text("0000001000011000", (width/2)+x78, (height/2)-y78);
-    //registro ALU
-    fill(f79);
-    text("0000001000011000", (width/2)-x79, (height/2)-y79);
-    //Acumulador
-    fill(a10);
-    text("0000001000011000", (width/2)+77, (height/2)-343+136);
-    //T10
-    //contador
-    fill(f80);
-    text("00001010", (width/2)-x80, (height/2)-y80);
-    //memoria
-    fill(f82);
-    text("0000000100010111", (width/2)+x82, (height/2)-y82+1);
-    //instruccion
-    fill(f83);
-    text("00000000", (width/2)-x83, (height/2)-y83+2);
-    fill(f84);
-    //direccion
-    text("00010111", (width/2)-x84-2, (height/2)+y84);
-    //memoria
-    fill(f86);
-    text("0000000100011110", (width/2)+x86, (height/2)-y86);
-    //registro ALU
-    fill(f87);
-    text("0000000100011110", (width/2)-x87, (height/2)-y87);
-    //Acumulador
-    fill(a11);
-    text("0000000011111010", (width/2)+77, (height/2)-343+148);
-    //T11 Guardar
-    //contador
-    fill(f88);
-    text("00001011", (width/2)-x88, (height/2)-y88);
-    //memoria
-    fill(f90);
-    text("0000011000010111", (width/2)+x90, (height/2)-y90);
-    //instruccion
-    fill(f91);
-    text("00000110", (width/2)-x91, (height/2)-y91);
-    fill(f92);
-    //direccion
-    text("00010111", (width/2)-x92-2, (height/2)+y92);
-    //memoria
-    fill(f94);
-    text("0000000011111010", (width/2)+x94, (height/2)-y94);
-    //registro ALU
-    fill(f95);
-    text("0000000011111010", (width/2)-x95, (height/2)-y95);
-    //Acumulador
-    fill(a12);
-    text("0000000011111010", (width/2)+77, (height/2)-343+160);
-    //GMemoria
-    fill(m3);
-    text("0000000011111010", (width/2)+489, (height/2)+288);
-    //T12 Finalizar
-    //contador
-    fill(f96);
-    text("00001100", (width/2)-x96, (height/2)-y96);
-    //memoria
-    fill(f98);
-    text("0000011100000000", (width/2)+x98, (height/2)-y98+1);
-    //instruccion
-    fill(f99);
-    text("00000111", (width/2)-x99, (height/2)-y99+2);
-    fill(f100);
-    //direccion
-    text("00000000", (width/2)-x100-2, (height/2)+y100);
+    text("00000000", (width/2)-x52-2, (height/2)+y52);
 
     switch(opr) {
       //contador-direcciones  
