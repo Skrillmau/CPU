@@ -70,6 +70,8 @@ void draw() {
     int a=(width/2)+410;
     int d=(width/2)+489;
     int b8=(height/2)-343, b4=(height/2)-445, b3=(height/2)-381, b2=(height/2)-13, b=(height/2)-13;
+    //ALU();
+    ALUDOS();
     memoria();
     decodificador();
     instruccion();
@@ -2134,7 +2136,7 @@ void draw() {
     int a=(width/2)+410;
     int d=(width/2)+489;
     int b8=(height/2)-343, b4=(height/2)-445, b3=(height/2)-381, b2=(height/2)-13, b=(height/2)-13;
-
+    ALUDOS();
     memoria();
     decodificador();
     instruccion();
@@ -3892,7 +3894,7 @@ void draw() {
     int a=(width/2)+410;
     int d=(width/2)+489;
     int b8=(height/2)-343, b4=(height/2)-445, b3=(height/2)-381, b2=(height/2)-13, b=(height/2)-13;
-
+    ALUDOS();
     memoria();
     decodificador();
     instruccion();
@@ -5342,4 +5344,68 @@ void lineasAletosas15() {
   x2=(width/2)+133;
   y2=(height/2)-100;
   line(x1, y1, x2, y2);
+}
+
+int movimientoEnX=0;
+int movimientoEnY=-125;
+
+void ALUDOS(){
+ int x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6, x7, y7, x8, y8,
+     x9, y9, x10, y10, x11, y11, x12, y12, x13, y13, x14, y14;
+     
+ //linea de arriba
+ x1=(width/2)+207+movimientoEnX;
+ y1=(height/2)-350+movimientoEnY;
+ x2=(width/2)+300+movimientoEnX;
+ y2=(height/2)-350+movimientoEnY;
+ //line(x1,y1,x2,y2);
+ //linea de diagonal arriba izquierda
+ x3=(width/2)+207+movimientoEnX;
+ y3=(height/2)-350+movimientoEnY;
+ x4=(width/2)+90+movimientoEnX;
+ y4=(height/2)-343+12*8+movimientoEnY;
+ //line(x3,y3,x4,y4);
+ //linea diagonal arriba derecha
+ x5=(width/2)+300+movimientoEnX;
+ y5=(height/2)-350+movimientoEnY;
+ x6=(width/2)+417+movimientoEnX;
+ y6=(height/2)-343+12*8+movimientoEnY;
+ //line(x5,y5,x6,y6);
+ //linea abajo izquierda 
+ x7=(width/2)+90+movimientoEnX;
+ y7=(height/2)-343+12*8+movimientoEnY;
+ x8=(width/2)+207+movimientoEnX;
+ y8=(height/2)-343+12*8+movimientoEnY;
+ line(x7,y7,x8,y8);
+ //linea de diagonal abajo izquierda 
+ x9=(width/2)+207+movimientoEnX;
+ y9=(height/2)-343+12*8+movimientoEnY;
+ x10=(width/2)+253+movimientoEnX;
+ y10=(height/2)-343+12*4+movimientoEnY;
+ //line(x9,y9,x10,y10);
+ //linea de abajo derecha 
+ x11=(width/2)+417+movimientoEnX;
+ y11=(height/2)-343+12*8+movimientoEnY;
+ x12=(width/2)+300+movimientoEnX;
+ y12=(height/2)-343+12*8+movimientoEnY;
+ //line(x11,y11,x12,y12);
+ 
+ //linea de diagonal abajo derecha
+ x13=(width/2)+300+movimientoEnX;
+ y13=(height/2)-343+12*8+movimientoEnY;
+ x14=(width/2)+253+movimientoEnX;
+ y14=(height/2)-343+12*4+movimientoEnY;
+ //line(x13,y13,x14,y14);
+ fill(#F5CBA7);
+ 
+ beginShape();
+ vertex(x1,y1);
+ vertex(x2,y2);
+ vertex(x6,y6);
+ vertex(x12,y12);
+ vertex(x10,y10);
+ vertex(x8,y8);
+ vertex(x4,y4);
+ endShape(CLOSE);
+ 
 }
