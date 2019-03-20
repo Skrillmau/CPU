@@ -1,3 +1,18 @@
+/*
+Proyecto Procesador Arquitectura Von Neumann
+
+Reaizado por:
+- Julian Ballesteros
+- Julian Hernandez
+- Luis Alejandro Peña
+- Juan Camilo Posada
+
+Para la materia Arquitectura de microcontroladores
+
+Semestre 2019-2
+
+Profesor William Moscoso
+*/
 int numero1, numero2, numero3, numero4, numero5;
 int timer;
 char[] keys = {'1', '2', '3'};
